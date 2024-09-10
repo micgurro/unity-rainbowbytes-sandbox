@@ -1,0 +1,90 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerStateMachine : MonoBehaviour
+{
+    #region Variables
+    #region Components
+    CharacterController _characterController;
+    #endregion
+
+    #region _isSomethingHash
+    int _isSomethingHash;
+    #endregion
+
+    #region Vector Variables
+    //Vector2 
+    //Vector3 
+    #endregion
+
+    #region Bool _isSomethingCondtion
+    //bool _isSomethingConditon;
+    #endregion
+
+    #region Floats & Zero
+   // float _rotationFactorPerFrame = 15.0f;
+    //float _multiplier = 4.0f;
+    //int _zero = 0f;
+    //float _gravity = -9.8f;
+    #endregion
+
+    #region Base & Factory
+    BaseState _currentState;
+    StateFactory _states;
+    #endregion
+    #endregion
+
+    #region Getters & Setters
+    public BaseState CurrentState { get { return _currentState; } set { _currentState = value; } } 
+    //public int IsSomethingHash { get { return _isSomethingHash; } }
+    public float Gravity { get { return _gravity; } }
+    #endregion
+
+    //Set methods that will need to be called in Update here.
+
+ 
+    void Start()
+    {
+        
+    }
+
+
+    void Update()
+    {
+        _currentState.UpdateStates();
+    }
+
+
+    void Awake()
+    {
+        _states = new StateFactory(this);
+        //Set this to your default state.
+        _currentState = _states.Default();
+        _currentState.EnterState();
+
+        //_isSomethingHash = Animator.StringToHash("isSomething");
+    }
+
+    void OnSomeValueInput(InputAction.CallbackContext context)
+    {
+        _currentInput = context.ReadValue<Vector2>();
+        _isInputPressed = _currentInput.x != _zero || _currentInput.y != _zero;
+    }
+
+    void OnSomeInputButton(InputAction.CallbackContext context)
+    {
+        _isButtonPressed = context.ReadValueAsButton();
+    }
+
+    void OnEnable()
+    {
+       
+    }
+
+    void OnDisable()
+    {
+        
+    }
+}

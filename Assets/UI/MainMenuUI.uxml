@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="NewGameButton" src="project://database/Assets/NewGameButton.uxml?fileID=9197481963319205126&amp;guid=b5b787b290627d844b1470875402fdf8&amp;type=3#NewGameButton" />
+    <ui:VisualElement name="Background" style="flex-direction: row; align-items: flex-start; justify-content: space-between; flex-grow: 1;">
+        <ui:VisualElement name="Left" style="flex-grow: 1; height: 100%; width: 10%;" />
+        <ui:VisualElement name="Center" style="flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; background-color: rgb(140, 80, 80); height: 100%; width: 30%;">
+            <ui:VisualElement name="HeroImage" style="align-items: flex-start; height: 30%;" />
+            <ui:VisualElement name="ButtonGroup" style="align-items: center; height: 60%; justify-content: space-around; flex-grow: 0; -unity-text-align: upper-left;">
+                <ui:Instance template="NewGameButton" name="NewGameButton" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-grow: 0; flex-shrink: 1;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-grow: 0; flex-shrink: 1;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-grow: 0; flex-shrink: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BottomPadding" style="align-items: flex-start;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Right" style="flex-grow: 1; height: 100%; width: 60%;" />
+    </ui:VisualElement>
+</ui:UXML>

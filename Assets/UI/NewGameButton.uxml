@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Button text="New Game" display-tooltip-when-elided="true" name="NewGameButton" class="button" style="flex-grow: 0; flex-shrink: 1;" />
+</ui:UXML>
